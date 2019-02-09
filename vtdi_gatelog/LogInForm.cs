@@ -42,6 +42,9 @@ namespace vtdi_gatelog
             num1 = rnd1.Next(5786, 98874);
             Tbcaptchadis.Text = num1.ToString();
 
+            Tbpassword.Text = "";
+            Tbusername.Text=" ";
+
         }
     }
 }

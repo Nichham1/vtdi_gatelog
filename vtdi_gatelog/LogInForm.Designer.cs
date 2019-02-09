@@ -57,7 +57,7 @@
             // Tbusername
             // 
             this.Tbusername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.Tbusername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
+            this.Tbusername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.Tbusername.BackColor = System.Drawing.SystemColors.MenuText;
             this.Tbusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tbusername.ForeColor = System.Drawing.Color.AliceBlue;
