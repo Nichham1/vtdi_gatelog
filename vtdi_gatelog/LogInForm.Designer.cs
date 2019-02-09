@@ -187,9 +187,9 @@
             this.Lbmessage.ForeColor = System.Drawing.Color.AliceBlue;
             this.Lbmessage.Location = new System.Drawing.Point(306, 277);
             this.Lbmessage.Name = "Lbmessage";
-            this.Lbmessage.Size = new System.Drawing.Size(81, 24);
+            this.Lbmessage.Size = new System.Drawing.Size(89, 24);
             this.Lbmessage.TabIndex = 3;
-            this.Lbmessage.Text = "Captcha";
+            this.Lbmessage.Text = "Message ";
             // 
             // LogInForm
             // 

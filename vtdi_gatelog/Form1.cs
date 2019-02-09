@@ -48,12 +48,19 @@ namespace vtdi_gatelog
 
         private void GateInOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("User clicked on Gate In Out");
+            GateInOut Gateio = new GateInOut();
+            Gateio.MdiParent = this;
+            Gateio.Show();
         }
 
         private void UserLogsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("User clicked on User Logs");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
