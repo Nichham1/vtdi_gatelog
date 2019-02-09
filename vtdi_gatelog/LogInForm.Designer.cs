@@ -48,10 +48,10 @@
             this.Tbpassword.BackColor = System.Drawing.SystemColors.MenuText;
             this.Tbpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tbpassword.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Tbpassword.Location = new System.Drawing.Point(153, 207);
+            this.Tbpassword.Location = new System.Drawing.Point(178, 239);
             this.Tbpassword.Name = "Tbpassword";
             this.Tbpassword.PasswordChar = '*';
-            this.Tbpassword.Size = new System.Drawing.Size(250, 24);
+            this.Tbpassword.Size = new System.Drawing.Size(291, 24);
             this.Tbpassword.TabIndex = 1;
             // 
             // Tbusername
@@ -61,9 +61,9 @@
             this.Tbusername.BackColor = System.Drawing.SystemColors.MenuText;
             this.Tbusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tbusername.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Tbusername.Location = new System.Drawing.Point(153, 148);
+            this.Tbusername.Location = new System.Drawing.Point(178, 171);
             this.Tbusername.Name = "Tbusername";
-            this.Tbusername.Size = new System.Drawing.Size(250, 24);
+            this.Tbusername.Size = new System.Drawing.Size(291, 24);
             this.Tbusername.TabIndex = 1;
             // 
             // Btreset
@@ -78,9 +78,9 @@
             this.Btreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btreset.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btreset.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Btreset.Location = new System.Drawing.Point(324, 342);
+            this.Btreset.Location = new System.Drawing.Point(378, 395);
             this.Btreset.Name = "Btreset";
-            this.Btreset.Size = new System.Drawing.Size(79, 34);
+            this.Btreset.Size = new System.Drawing.Size(92, 39);
             this.Btreset.TabIndex = 2;
             this.Btreset.Text = "Reset";
             this.Btreset.UseVisualStyleBackColor = false;
@@ -97,9 +97,9 @@
             this.Btlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btlogin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btlogin.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Btlogin.Location = new System.Drawing.Point(153, 342);
+            this.Btlogin.Location = new System.Drawing.Point(178, 395);
             this.Btlogin.Name = "Btlogin";
-            this.Btlogin.Size = new System.Drawing.Size(79, 34);
+            this.Btlogin.Size = new System.Drawing.Size(92, 39);
             this.Btlogin.TabIndex = 2;
             this.Btlogin.Text = "Login";
             this.Btlogin.UseVisualStyleBackColor = false;
@@ -113,7 +113,7 @@
             this.Lbusername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Lbusername.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbusername.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Lbusername.Location = new System.Drawing.Point(56, 145);
+            this.Lbusername.Location = new System.Drawing.Point(65, 167);
             this.Lbusername.Name = "Lbusername";
             this.Lbusername.Size = new System.Drawing.Size(91, 23);
             this.Lbusername.TabIndex = 3;
@@ -127,7 +127,7 @@
             this.Lbpassword.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Lbpassword.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbpassword.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Lbpassword.Location = new System.Drawing.Point(55, 203);
+            this.Lbpassword.Location = new System.Drawing.Point(64, 234);
             this.Lbpassword.Name = "Lbpassword";
             this.Lbpassword.Size = new System.Drawing.Size(86, 23);
             this.Lbpassword.TabIndex = 3;
@@ -140,7 +140,7 @@
             this.Lbcaptcha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Lbcaptcha.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbcaptcha.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Lbcaptcha.Location = new System.Drawing.Point(60, 277);
+            this.Lbcaptcha.Location = new System.Drawing.Point(70, 320);
             this.Lbcaptcha.Name = "Lbcaptcha";
             this.Lbcaptcha.Size = new System.Drawing.Size(81, 24);
             this.Lbcaptcha.TabIndex = 3;
@@ -151,10 +151,10 @@
             this.Tbcaptchadis.BackColor = System.Drawing.SystemColors.MenuText;
             this.Tbcaptchadis.Enabled = false;
             this.Tbcaptchadis.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Tbcaptchadis.Location = new System.Drawing.Point(153, 290);
+            this.Tbcaptchadis.Location = new System.Drawing.Point(178, 335);
             this.Tbcaptchadis.Name = "Tbcaptchadis";
             this.Tbcaptchadis.ReadOnly = true;
-            this.Tbcaptchadis.Size = new System.Drawing.Size(112, 20);
+            this.Tbcaptchadis.Size = new System.Drawing.Size(130, 22);
             this.Tbcaptchadis.TabIndex = 1;
             this.Tbcaptchadis.WordWrap = false;
             // 
@@ -163,9 +163,9 @@
             this.Pbicon.BackColor = System.Drawing.SystemColors.Desktop;
             this.Pbicon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Pbicon.Image = ((System.Drawing.Image)(resources.GetObject("Pbicon.Image")));
-            this.Pbicon.Location = new System.Drawing.Point(245, 78);
+            this.Pbicon.Location = new System.Drawing.Point(286, 90);
             this.Pbicon.Name = "Pbicon";
-            this.Pbicon.Size = new System.Drawing.Size(50, 51);
+            this.Pbicon.Size = new System.Drawing.Size(58, 58);
             this.Pbicon.TabIndex = 4;
             this.Pbicon.TabStop = false;
             // 
@@ -173,9 +173,9 @@
             // 
             this.TBcaptcha.BackColor = System.Drawing.SystemColors.MenuText;
             this.TBcaptcha.ForeColor = System.Drawing.Color.AliceBlue;
-            this.TBcaptcha.Location = new System.Drawing.Point(153, 264);
+            this.TBcaptcha.Location = new System.Drawing.Point(178, 305);
             this.TBcaptcha.Name = "TBcaptcha";
-            this.TBcaptcha.Size = new System.Drawing.Size(112, 20);
+            this.TBcaptcha.Size = new System.Drawing.Size(130, 22);
             this.TBcaptcha.TabIndex = 1;
             // 
             // Lbmessage
@@ -185,7 +185,7 @@
             this.Lbmessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Lbmessage.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbmessage.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Lbmessage.Location = new System.Drawing.Point(306, 277);
+            this.Lbmessage.Location = new System.Drawing.Point(357, 320);
             this.Lbmessage.Name = "Lbmessage";
             this.Lbmessage.Size = new System.Drawing.Size(89, 24);
             this.Lbmessage.TabIndex = 3;
@@ -193,10 +193,12 @@
             // 
             // LogInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.Btlogin;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(506, 470);
+            this.CancelButton = this.Btreset;
+            this.ClientSize = new System.Drawing.Size(533, 555);
             this.Controls.Add(this.Pbicon);
             this.Controls.Add(this.Lbmessage);
             this.Controls.Add(this.Lbcaptcha);
@@ -208,8 +210,10 @@
             this.Controls.Add(this.TBcaptcha);
             this.Controls.Add(this.Tbcaptchadis);
             this.Controls.Add(this.Tbpassword);
+            this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.AliceBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(533, 555);
             this.Name = "LogInForm";
             this.Text = "LogInForm";
             ((System.ComponentModel.ISupportInitialize)(this.Pbicon)).EndInit();

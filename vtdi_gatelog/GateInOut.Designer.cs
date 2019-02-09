@@ -34,10 +34,10 @@
             this.CBcheckout = new System.Windows.Forms.CheckBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.Tbft = new System.Windows.Forms.TextBox();
+            this.TBlastname = new System.Windows.Forms.TextBox();
+            this.TbFirstname = new System.Windows.Forms.TextBox();
             this.BTGateSubmit = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Tbcarmodle = new System.Windows.Forms.TextBox();
             this.Tbph = new System.Windows.Forms.TextBox();
             this.Tbl = new System.Windows.Forms.TextBox();
             this.DtpCheckin = new System.Windows.Forms.DateTimePicker();
@@ -54,17 +54,21 @@
             // 
             // TbDept
             // 
-            this.TbDept.Location = new System.Drawing.Point(290, 145);
+            this.TbDept.AcceptsTab = true;
+            this.TbDept.Location = new System.Drawing.Point(339, 168);
+            this.TbDept.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbDept.Name = "TbDept";
-            this.TbDept.Size = new System.Drawing.Size(160, 20);
+            this.TbDept.Size = new System.Drawing.Size(186, 22);
             this.TbDept.TabIndex = 0;
             // 
             // BtGateReset
             // 
+            this.BtGateReset.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtGateReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtGateReset.Location = new System.Drawing.Point(147, 439);
+            this.BtGateReset.Location = new System.Drawing.Point(309, 515);
+            this.BtGateReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtGateReset.Name = "BtGateReset";
-            this.BtGateReset.Size = new System.Drawing.Size(75, 23);
+            this.BtGateReset.Size = new System.Drawing.Size(88, 26);
             this.BtGateReset.TabIndex = 1;
             this.BtGateReset.Text = "Reset";
             this.BtGateReset.UseVisualStyleBackColor = true;
@@ -72,9 +76,10 @@
             // CBcheckin
             // 
             this.CBcheckin.AutoSize = true;
-            this.CBcheckin.Location = new System.Drawing.Point(265, 312);
+            this.CBcheckin.Location = new System.Drawing.Point(309, 356);
+            this.CBcheckin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CBcheckin.Name = "CBcheckin";
-            this.CBcheckin.Size = new System.Drawing.Size(69, 17);
+            this.CBcheckin.Size = new System.Drawing.Size(73, 19);
             this.CBcheckin.TabIndex = 2;
             this.CBcheckin.Text = "Check In";
             this.CBcheckin.UseVisualStyleBackColor = true;
@@ -82,15 +87,17 @@
             // CBcheckout
             // 
             this.CBcheckout.AutoSize = true;
-            this.CBcheckout.Location = new System.Drawing.Point(265, 364);
+            this.CBcheckout.Location = new System.Drawing.Point(309, 420);
+            this.CBcheckout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CBcheckout.Name = "CBcheckout";
-            this.CBcheckout.Size = new System.Drawing.Size(77, 17);
+            this.CBcheckout.Size = new System.Drawing.Size(82, 19);
             this.CBcheckout.TabIndex = 2;
             this.CBcheckout.Text = "Check Out";
             this.CBcheckout.UseVisualStyleBackColor = true;
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "Computer",
@@ -99,159 +106,190 @@
             "Electronics",
             "Valuables",
             "Money in excess of $50000"});
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 324);
+            this.checkedListBox1.Location = new System.Drawing.Point(14, 374);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(159, 94);
+            this.checkedListBox1.Size = new System.Drawing.Size(185, 106);
             this.checkedListBox1.TabIndex = 3;
             // 
             // richTextBox1
             // 
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 201);
+            this.richTextBox1.AutoWordSelection = true;
+            this.richTextBox1.Location = new System.Drawing.Point(14, 232);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(452, 96);
+            this.richTextBox1.Size = new System.Drawing.Size(503, 110);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
-            // textBox3
+            // TBlastname
             // 
-            this.textBox3.Location = new System.Drawing.Point(290, 34);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 20);
-            this.textBox3.TabIndex = 0;
+            this.TBlastname.AcceptsTab = true;
+            this.TBlastname.Location = new System.Drawing.Point(339, 39);
+            this.TBlastname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TBlastname.Name = "TBlastname";
+            this.TBlastname.Size = new System.Drawing.Size(186, 22);
+            this.TBlastname.TabIndex = 0;
+            this.TBlastname.WordWrap = false;
             // 
-            // Tbft
+            // TbFirstname
             // 
-            this.Tbft.Location = new System.Drawing.Point(37, 34);
-            this.Tbft.Name = "Tbft";
-            this.Tbft.Size = new System.Drawing.Size(185, 20);
-            this.Tbft.TabIndex = 0;
+            this.TbFirstname.AcceptsTab = true;
+            this.TbFirstname.Location = new System.Drawing.Point(43, 39);
+            this.TbFirstname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbFirstname.Name = "TbFirstname";
+            this.TbFirstname.Size = new System.Drawing.Size(215, 22);
+            this.TbFirstname.TabIndex = 0;
+            this.TbFirstname.WordWrap = false;
             // 
             // BTGateSubmit
             // 
             this.BTGateSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTGateSubmit.Location = new System.Drawing.Point(268, 439);
+            this.BTGateSubmit.Location = new System.Drawing.Point(101, 515);
+            this.BTGateSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTGateSubmit.Name = "BTGateSubmit";
-            this.BTGateSubmit.Size = new System.Drawing.Size(75, 23);
+            this.BTGateSubmit.Size = new System.Drawing.Size(88, 26);
             this.BTGateSubmit.TabIndex = 1;
-            this.BTGateSubmit.Text = "Reset";
+            this.BTGateSubmit.Text = "Submit";
             this.BTGateSubmit.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // Tbcarmodle
             // 
-            this.textBox5.Location = new System.Drawing.Point(290, 93);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(160, 20);
-            this.textBox5.TabIndex = 0;
+            this.Tbcarmodle.AcceptsTab = true;
+            this.Tbcarmodle.Location = new System.Drawing.Point(339, 108);
+            this.Tbcarmodle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Tbcarmodle.Name = "Tbcarmodle";
+            this.Tbcarmodle.Size = new System.Drawing.Size(186, 22);
+            this.Tbcarmodle.TabIndex = 0;
+            this.Tbcarmodle.WordWrap = false;
             // 
             // Tbph
             // 
-            this.Tbph.Location = new System.Drawing.Point(37, 145);
+            this.Tbph.AcceptsTab = true;
+            this.Tbph.Location = new System.Drawing.Point(43, 168);
+            this.Tbph.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Tbph.Name = "Tbph";
-            this.Tbph.Size = new System.Drawing.Size(185, 20);
+            this.Tbph.Size = new System.Drawing.Size(215, 22);
             this.Tbph.TabIndex = 0;
             this.Tbph.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Tbph.WordWrap = false;
             // 
             // Tbl
             // 
-            this.Tbl.Location = new System.Drawing.Point(37, 93);
+            this.Tbl.AcceptsTab = true;
+            this.Tbl.Location = new System.Drawing.Point(43, 108);
+            this.Tbl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Tbl.Name = "Tbl";
-            this.Tbl.Size = new System.Drawing.Size(185, 20);
+            this.Tbl.Size = new System.Drawing.Size(215, 22);
             this.Tbl.TabIndex = 0;
+            this.Tbl.WordWrap = false;
             // 
             // DtpCheckin
             // 
-            this.DtpCheckin.Location = new System.Drawing.Point(232, 335);
+            this.DtpCheckin.Location = new System.Drawing.Point(270, 386);
+            this.DtpCheckin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DtpCheckin.Name = "DtpCheckin";
-            this.DtpCheckin.Size = new System.Drawing.Size(200, 20);
+            this.DtpCheckin.Size = new System.Drawing.Size(232, 22);
             this.DtpCheckin.TabIndex = 5;
             // 
             // DTPcheckout
             // 
-            this.DTPcheckout.Location = new System.Drawing.Point(232, 387);
+            this.DTPcheckout.Location = new System.Drawing.Point(270, 446);
+            this.DTPcheckout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DTPcheckout.MinDate = new System.DateTime(2018, 12, 31, 0, 0, 0, 0);
             this.DTPcheckout.Name = "DTPcheckout";
-            this.DTPcheckout.Size = new System.Drawing.Size(200, 20);
+            this.DTPcheckout.Size = new System.Drawing.Size(232, 22);
             this.DTPcheckout.TabIndex = 6;
             // 
             // Lbft
             // 
             this.Lbft.AutoSize = true;
-            this.Lbft.Location = new System.Drawing.Point(97, 18);
+            this.Lbft.Location = new System.Drawing.Point(113, 21);
+            this.Lbft.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbft.Name = "Lbft";
-            this.Lbft.Size = new System.Drawing.Size(57, 13);
+            this.Lbft.Size = new System.Drawing.Size(64, 15);
             this.Lbft.TabIndex = 7;
             this.Lbft.Text = "First Name";
             // 
             // LBL
             // 
             this.LBL.AutoSize = true;
-            this.LBL.Location = new System.Drawing.Point(84, 77);
+            this.LBL.Location = new System.Drawing.Point(98, 89);
+            this.LBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL.Name = "LBL";
-            this.LBL.Size = new System.Drawing.Size(87, 13);
+            this.LBL.Size = new System.Drawing.Size(96, 15);
             this.LBL.TabIndex = 8;
             this.LBL.Text = "License Number ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(340, 18);
+            this.label3.Location = new System.Drawing.Point(396, 21);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(66, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "Last Name ";
             // 
             // LbCmodle
             // 
             this.LbCmodle.AutoSize = true;
-            this.LbCmodle.Location = new System.Drawing.Point(336, 77);
+            this.LbCmodle.Location = new System.Drawing.Point(392, 89);
+            this.LbCmodle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LbCmodle.Name = "LbCmodle";
-            this.LbCmodle.Size = new System.Drawing.Size(54, 13);
+            this.LbCmodle.Size = new System.Drawing.Size(60, 15);
             this.LbCmodle.TabIndex = 7;
             this.LbCmodle.Text = "Car model";
             // 
             // Lbph
             // 
             this.Lbph.AutoSize = true;
-            this.Lbph.Location = new System.Drawing.Point(84, 129);
+            this.Lbph.Location = new System.Drawing.Point(98, 149);
+            this.Lbph.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbph.Name = "Lbph";
-            this.Lbph.Size = new System.Drawing.Size(81, 13);
+            this.Lbph.Size = new System.Drawing.Size(89, 15);
             this.Lbph.TabIndex = 8;
             this.Lbph.Text = "Phone Number ";
             // 
             // LbDept
             // 
             this.LbDept.AutoSize = true;
-            this.LbDept.Location = new System.Drawing.Point(336, 129);
+            this.LbDept.Location = new System.Drawing.Point(392, 149);
+            this.LbDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LbDept.Name = "LbDept";
-            this.LbDept.Size = new System.Drawing.Size(65, 13);
+            this.LbDept.Size = new System.Drawing.Size(72, 15);
             this.LbDept.TabIndex = 8;
             this.LbDept.Text = "Department ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(178, 185);
+            this.label7.Location = new System.Drawing.Point(207, 214);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 13);
+            this.label7.Size = new System.Drawing.Size(115, 15);
             this.label7.TabIndex = 8;
             this.label7.Text = "Purpose for the visit";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(34, 308);
+            this.label8.Location = new System.Drawing.Point(39, 356);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 13);
+            this.label8.Size = new System.Drawing.Size(105, 15);
             this.label8.TabIndex = 8;
             this.label8.Text = "Things to Declear ";
             // 
             // GateInOut
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.BTGateSubmit;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 491);
+            this.CancelButton = this.BtGateReset;
+            this.ClientSize = new System.Drawing.Size(533, 555);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.LbDept);
@@ -268,13 +306,16 @@
             this.Controls.Add(this.CBcheckin);
             this.Controls.Add(this.BTGateSubmit);
             this.Controls.Add(this.BtGateReset);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.Tbft);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Tbcarmodle);
+            this.Controls.Add(this.TbFirstname);
+            this.Controls.Add(this.TBlastname);
             this.Controls.Add(this.Tbl);
             this.Controls.Add(this.Tbph);
             this.Controls.Add(this.TbDept);
+            this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(533, 555);
             this.Name = "GateInOut";
             this.Text = "Gate_in_out";
             this.ResumeLayout(false);
@@ -290,10 +331,10 @@
         private System.Windows.Forms.CheckBox CBcheckout;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox Tbft;
+        private System.Windows.Forms.TextBox TBlastname;
+        private System.Windows.Forms.TextBox TbFirstname;
         private System.Windows.Forms.Button BTGateSubmit;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Tbcarmodle;
         private System.Windows.Forms.TextBox Tbph;
         private System.Windows.Forms.TextBox Tbl;
         private System.Windows.Forms.DateTimePicker DtpCheckin;

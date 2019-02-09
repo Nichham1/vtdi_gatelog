@@ -18,6 +18,10 @@ namespace vtdi_gatelog
         public LogInForm()
         {
             InitializeComponent();
+
+            Random rnd1 = new Random();
+            num1 = rnd1.Next(5786, 98874);
+            Tbcaptchadis.Text = num1.ToString();
         }
 
         private void Btlogin_Click(object sender, EventArgs e)
