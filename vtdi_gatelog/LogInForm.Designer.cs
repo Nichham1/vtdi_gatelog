@@ -35,21 +35,23 @@
             this.Btlogin = new System.Windows.Forms.Button();
             this.Lbusername = new System.Windows.Forms.Label();
             this.Lbpassword = new System.Windows.Forms.Label();
-            this.Lbcapcha = new System.Windows.Forms.Label();
-            this.Tbcapchadis = new System.Windows.Forms.TextBox();
+            this.Lbcaptcha = new System.Windows.Forms.Label();
+            this.Tbcaptchadis = new System.Windows.Forms.TextBox();
             this.Pbicon = new System.Windows.Forms.PictureBox();
-            this.TBcapcha = new System.Windows.Forms.TextBox();
+            this.TBcaptcha = new System.Windows.Forms.TextBox();
+            this.Lbmessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Pbicon)).BeginInit();
             this.SuspendLayout();
             // 
             // Tbpassword
             // 
             this.Tbpassword.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Tbpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tbpassword.ForeColor = System.Drawing.Color.AliceBlue;
             this.Tbpassword.Location = new System.Drawing.Point(153, 207);
             this.Tbpassword.Name = "Tbpassword";
             this.Tbpassword.PasswordChar = '*';
-            this.Tbpassword.Size = new System.Drawing.Size(250, 20);
+            this.Tbpassword.Size = new System.Drawing.Size(250, 24);
             this.Tbpassword.TabIndex = 1;
             // 
             // Tbusername
@@ -57,10 +59,11 @@
             this.Tbusername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.Tbusername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
             this.Tbusername.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Tbusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tbusername.ForeColor = System.Drawing.Color.AliceBlue;
             this.Tbusername.Location = new System.Drawing.Point(153, 148);
             this.Tbusername.Name = "Tbusername";
-            this.Tbusername.Size = new System.Drawing.Size(250, 20);
+            this.Tbusername.Size = new System.Drawing.Size(250, 24);
             this.Tbusername.TabIndex = 1;
             // 
             // Btreset
@@ -75,12 +78,13 @@
             this.Btreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btreset.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btreset.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Btreset.Location = new System.Drawing.Point(282, 342);
+            this.Btreset.Location = new System.Drawing.Point(324, 342);
             this.Btreset.Name = "Btreset";
             this.Btreset.Size = new System.Drawing.Size(79, 34);
             this.Btreset.TabIndex = 2;
             this.Btreset.Text = "Reset";
             this.Btreset.UseVisualStyleBackColor = false;
+            this.Btreset.Click += new System.EventHandler(this.Btreset_Click);
             // 
             // Btlogin
             // 
@@ -93,12 +97,13 @@
             this.Btlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btlogin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btlogin.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Btlogin.Location = new System.Drawing.Point(176, 342);
+            this.Btlogin.Location = new System.Drawing.Point(153, 342);
             this.Btlogin.Name = "Btlogin";
             this.Btlogin.Size = new System.Drawing.Size(79, 34);
             this.Btlogin.TabIndex = 2;
             this.Btlogin.Text = "Login";
             this.Btlogin.UseVisualStyleBackColor = false;
+            this.Btlogin.Click += new System.EventHandler(this.Btlogin_Click);
             // 
             // Lbusername
             // 
@@ -128,65 +133,82 @@
             this.Lbpassword.TabIndex = 3;
             this.Lbpassword.Text = "Password";
             // 
-            // Lbcapcha
+            // Lbcaptcha
             // 
-            this.Lbcapcha.AutoSize = true;
-            this.Lbcapcha.BackColor = System.Drawing.SystemColors.ControlText;
-            this.Lbcapcha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Lbcapcha.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbcapcha.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Lbcapcha.Location = new System.Drawing.Point(66, 269);
-            this.Lbcapcha.Name = "Lbcapcha";
-            this.Lbcapcha.Size = new System.Drawing.Size(75, 24);
-            this.Lbcapcha.TabIndex = 3;
-            this.Lbcapcha.Text = "Capcha";
+            this.Lbcaptcha.AutoSize = true;
+            this.Lbcaptcha.BackColor = System.Drawing.SystemColors.ControlText;
+            this.Lbcaptcha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Lbcaptcha.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbcaptcha.ForeColor = System.Drawing.Color.AliceBlue;
+            this.Lbcaptcha.Location = new System.Drawing.Point(60, 277);
+            this.Lbcaptcha.Name = "Lbcaptcha";
+            this.Lbcaptcha.Size = new System.Drawing.Size(81, 24);
+            this.Lbcaptcha.TabIndex = 3;
+            this.Lbcaptcha.Text = "Captcha";
             // 
-            // Tbcapchadis
+            // Tbcaptchadis
             // 
-            this.Tbcapchadis.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Tbcapchadis.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Tbcapchadis.Location = new System.Drawing.Point(153, 290);
-            this.Tbcapchadis.Name = "Tbcapchadis";
-            this.Tbcapchadis.ReadOnly = true;
-            this.Tbcapchadis.Size = new System.Drawing.Size(112, 20);
-            this.Tbcapchadis.TabIndex = 1;
-            this.Tbcapchadis.WordWrap = false;
+            this.Tbcaptchadis.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Tbcaptchadis.Enabled = false;
+            this.Tbcaptchadis.ForeColor = System.Drawing.Color.AliceBlue;
+            this.Tbcaptchadis.Location = new System.Drawing.Point(153, 290);
+            this.Tbcaptchadis.Name = "Tbcaptchadis";
+            this.Tbcaptchadis.ReadOnly = true;
+            this.Tbcaptchadis.Size = new System.Drawing.Size(112, 20);
+            this.Tbcaptchadis.TabIndex = 1;
+            this.Tbcaptchadis.WordWrap = false;
             // 
             // Pbicon
             // 
             this.Pbicon.BackColor = System.Drawing.SystemColors.Desktop;
             this.Pbicon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Pbicon.Image = ((System.Drawing.Image)(resources.GetObject("Pbicon.Image")));
-            this.Pbicon.Location = new System.Drawing.Point(253, 53);
+            this.Pbicon.Location = new System.Drawing.Point(245, 78);
             this.Pbicon.Name = "Pbicon";
             this.Pbicon.Size = new System.Drawing.Size(50, 51);
             this.Pbicon.TabIndex = 4;
             this.Pbicon.TabStop = false;
             // 
-            // TBcapcha
+            // TBcaptcha
             // 
-            this.TBcapcha.BackColor = System.Drawing.SystemColors.MenuText;
-            this.TBcapcha.ForeColor = System.Drawing.Color.AliceBlue;
-            this.TBcapcha.Location = new System.Drawing.Point(153, 264);
-            this.TBcapcha.Name = "TBcapcha";
-            this.TBcapcha.Size = new System.Drawing.Size(112, 20);
-            this.TBcapcha.TabIndex = 1;
+            this.TBcaptcha.BackColor = System.Drawing.SystemColors.MenuText;
+            this.TBcaptcha.ForeColor = System.Drawing.Color.AliceBlue;
+            this.TBcaptcha.Location = new System.Drawing.Point(153, 264);
+            this.TBcaptcha.Name = "TBcaptcha";
+            this.TBcaptcha.Size = new System.Drawing.Size(112, 20);
+            this.TBcaptcha.TabIndex = 1;
+            // 
+            // Lbmessage
+            // 
+            this.Lbmessage.AutoSize = true;
+            this.Lbmessage.BackColor = System.Drawing.SystemColors.ControlText;
+            this.Lbmessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Lbmessage.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbmessage.ForeColor = System.Drawing.Color.AliceBlue;
+            this.Lbmessage.Location = new System.Drawing.Point(306, 277);
+            this.Lbmessage.Name = "Lbmessage";
+            this.Lbmessage.Size = new System.Drawing.Size(81, 24);
+            this.Lbmessage.TabIndex = 3;
+            this.Lbmessage.Text = "Captcha";
             // 
             // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(506, 470);
             this.Controls.Add(this.Pbicon);
-            this.Controls.Add(this.Lbcapcha);
+            this.Controls.Add(this.Lbmessage);
+            this.Controls.Add(this.Lbcaptcha);
             this.Controls.Add(this.Lbpassword);
             this.Controls.Add(this.Lbusername);
             this.Controls.Add(this.Btlogin);
             this.Controls.Add(this.Btreset);
             this.Controls.Add(this.Tbusername);
-            this.Controls.Add(this.TBcapcha);
-            this.Controls.Add(this.Tbcapchadis);
+            this.Controls.Add(this.TBcaptcha);
+            this.Controls.Add(this.Tbcaptchadis);
             this.Controls.Add(this.Tbpassword);
+            this.ForeColor = System.Drawing.Color.AliceBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LogInForm";
             this.Text = "LogInForm";
@@ -204,9 +226,10 @@
         private System.Windows.Forms.Button Btlogin;
         private System.Windows.Forms.Label Lbusername;
         private System.Windows.Forms.Label Lbpassword;
-        private System.Windows.Forms.Label Lbcapcha;
-        private System.Windows.Forms.TextBox Tbcapchadis;
+        private System.Windows.Forms.Label Lbcaptcha;
+        private System.Windows.Forms.TextBox Tbcaptchadis;
         private System.Windows.Forms.PictureBox Pbicon;
-        private System.Windows.Forms.TextBox TBcapcha;
+        private System.Windows.Forms.TextBox TBcaptcha;
+        private System.Windows.Forms.Label Lbmessage;
     }
 }
