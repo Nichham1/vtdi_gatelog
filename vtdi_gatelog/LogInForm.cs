@@ -37,6 +37,8 @@ namespace vtdi_gatelog
                 Lbmessage.Text = ("You are Not a robot");
 
             }
+
+            this.Close();
         }
 
         private void Btreset_Click(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace vtdi_gatelog
             Tbcaptchadis.Text = num1.ToString();
 
             Tbpassword.Text = "";
-            Tbusername.Text=" ";
+            Tbusername.Text= "";
 
         }
     }
