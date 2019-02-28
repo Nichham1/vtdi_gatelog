@@ -71,6 +71,7 @@
             this.Btreset.BackColor = System.Drawing.SystemColors.ControlText;
             this.Btreset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Btreset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btreset.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Btreset.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;
             this.Btreset.FlatAppearance.BorderSize = 2;
             this.Btreset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
@@ -88,6 +89,7 @@
             // 
             // Btlogin
             // 
+            this.Btlogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Btlogin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Btlogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btlogin.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue;

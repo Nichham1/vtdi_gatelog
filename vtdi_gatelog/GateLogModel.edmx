@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="vtdi_gatelog_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Gateinout">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VehicleTypeID" Type="int" Nullable="false" />
+          <Property Name="PlateNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PurposeID" Type="int" Nullable="false" />
+          <Property Name="ItemstodeclereID" Type="int" Nullable="false" />
+          <Property Name="Datetimein" Type="datetime" />
+          <Property Name="Datetimeout" Type="datetime" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Itemtodeclear">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="purpose">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Genderid" Type="int" Nullable="false" />
+          <Property Name="Datecreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VehicleType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Gateinout_Itemtodeclear">
+          <End Role="Itemtodeclear" Type="Self.Itemtodeclear" Multiplicity="1" />
+          <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Itemtodeclear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gateinout">
+              <PropertyRef Name="ItemstodeclereID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gateinout_Purpose">
+          <End Role="purpose" Type="Self.purpose" Multiplicity="1" />
+          <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purpose">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gateinout">
+              <PropertyRef Name="PurposeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gateinout_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gateinout">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gateinout_VehicleType">
+          <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="1" />
+          <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gateinout">
+              <PropertyRef Name="VehicleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Genderid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="vtdi_gatelog_dbModelStoreContainer">
+          <EntitySet Name="Gateinout" EntityType="Self.Gateinout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Itemtodeclear" EntityType="Self.Itemtodeclear" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="purpose" EntityType="Self.purpose" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleType" EntityType="Self.VehicleType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Gateinout_Itemtodeclear" Association="Self.FK_Gateinout_Itemtodeclear">
+            <End Role="Itemtodeclear" EntitySet="Itemtodeclear" />
+            <End Role="Gateinout" EntitySet="Gateinout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gateinout_Purpose" Association="Self.FK_Gateinout_Purpose">
+            <End Role="purpose" EntitySet="purpose" />
+            <End Role="Gateinout" EntitySet="Gateinout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gateinout_Users" Association="Self.FK_Gateinout_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Gateinout" EntitySet="Gateinout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gateinout_VehicleType" Association="Self.FK_Gateinout_VehicleType">
+            <End Role="VehicleType" EntitySet="VehicleType" />
+            <End Role="Gateinout" EntitySet="Gateinout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Gender" Association="Self.FK_Users_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="vtdi_gatelog_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Gateinout">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VehicleTypeID" Type="Int32" Nullable="false" />
+          <Property Name="PlateNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PurposeID" Type="Int32" Nullable="false" />
+          <Property Name="ItemstodeclereID" Type="Int32" Nullable="false" />
+          <Property Name="Datetimein" Type="DateTime" Precision="3" />
+          <Property Name="Datetimeout" Type="DateTime" Precision="3" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Itemtodeclear" Relationship="Self.FK_Gateinout_Itemtodeclear" FromRole="Gateinout" ToRole="Itemtodeclear" />
+          <NavigationProperty Name="purpose" Relationship="Self.FK_Gateinout_Purpose" FromRole="Gateinout" ToRole="purpose" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Gateinout_Users" FromRole="Gateinout" ToRole="Users" />
+          <NavigationProperty Name="VehicleType" Relationship="Self.FK_Gateinout_VehicleType" FromRole="Gateinout" ToRole="VehicleType" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_Gender" FromRole="Gender" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Itemtodeclear">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Gateinouts" Relationship="Self.FK_Gateinout_Itemtodeclear" FromRole="Itemtodeclear" ToRole="Gateinout" />
+        </EntityType>
+        <EntityType Name="purpose">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Gateinouts" Relationship="Self.FK_Gateinout_Purpose" FromRole="purpose" ToRole="Gateinout" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Genderid" Type="Int32" Nullable="false" />
+          <Property Name="Datecreated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Gateinouts" Relationship="Self.FK_Gateinout_Users" FromRole="Users" ToRole="Gateinout" />
+          <NavigationProperty Name="Gender1" Relationship="Self.FK_Users_Gender" FromRole="Users" ToRole="Gender" />
+        </EntityType>
+        <EntityType Name="VehicleType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Gateinouts" Relationship="Self.FK_Gateinout_VehicleType" FromRole="VehicleType" ToRole="Gateinout" />
+        </EntityType>
+        <Association Name="FK_Gateinout_Itemtodeclear">
+          <End Role="Itemtodeclear" Type="Self.Itemtodeclear" Multiplicity="1" />
+          <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Itemtodeclear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gateinout">
+              <PropertyRef Name="ItemstodeclereID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gateinout_Purpose">
+          <End Role="purpose" Type="Self.purpose" Multiplicity="1" />
+          <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purpose">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gateinout">
+              <PropertyRef Name="PurposeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gateinout_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gateinout">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gateinout_VehicleType">
+          <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="1" />
+          <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gateinout">
+              <PropertyRef Name="VehicleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Genderid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="vtdi_gatelog_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Gateinouts" EntityType="Self.Gateinout" />
+          <EntitySet Name="Genders" EntityType="Self.Gender" />
+          <EntitySet Name="Itemtodeclears" EntityType="Self.Itemtodeclear" />
+          <EntitySet Name="purposes" EntityType="Self.purpose" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="VehicleTypes" EntityType="Self.VehicleType" />
+          <AssociationSet Name="FK_Gateinout_Itemtodeclear" Association="Self.FK_Gateinout_Itemtodeclear">
+            <End Role="Itemtodeclear" EntitySet="Itemtodeclears" />
+            <End Role="Gateinout" EntitySet="Gateinouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gateinout_Purpose" Association="Self.FK_Gateinout_Purpose">
+            <End Role="purpose" EntitySet="purposes" />
+            <End Role="Gateinout" EntitySet="Gateinouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gateinout_Users" Association="Self.FK_Gateinout_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Gateinout" EntitySet="Gateinouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gateinout_VehicleType" Association="Self.FK_Gateinout_VehicleType">
+            <End Role="VehicleType" EntitySet="VehicleTypes" />
+            <End Role="Gateinout" EntitySet="Gateinouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Gender" Association="Self.FK_Users_Gender">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="vtdi_gatelog_dbModelStoreContainer" CdmEntityContainer="vtdi_gatelog_dbEntities">
+          <EntitySetMapping Name="Gateinouts">
+            <EntityTypeMapping TypeName="vtdi_gatelog_dbModel.Gateinout">
+              <MappingFragment StoreEntitySet="Gateinout">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+                <ScalarProperty Name="PurposeID" ColumnName="PurposeID" />
+                <ScalarProperty Name="ItemstodeclereID" ColumnName="ItemstodeclereID" />
+                <ScalarProperty Name="Datetimein" ColumnName="Datetimein" />
+                <ScalarProperty Name="Datetimeout" ColumnName="Datetimeout" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="vtdi_gatelog_dbModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Itemtodeclears">
+            <EntityTypeMapping TypeName="vtdi_gatelog_dbModel.Itemtodeclear">
+              <MappingFragment StoreEntitySet="Itemtodeclear">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="purposes">
+            <EntityTypeMapping TypeName="vtdi_gatelog_dbModel.purpose">
+              <MappingFragment StoreEntitySet="purpose">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="vtdi_gatelog_dbModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Genderid" ColumnName="Genderid" />
+                <ScalarProperty Name="Datecreated" ColumnName="Datecreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleTypes">
+            <EntityTypeMapping TypeName="vtdi_gatelog_dbModel.VehicleType">
+              <MappingFragment StoreEntitySet="VehicleType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

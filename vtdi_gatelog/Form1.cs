@@ -12,6 +12,10 @@ namespace vtdi_gatelog
 {
     public partial class Form1 : Form
     {
+
+
+        public bool isloggedin = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -20,37 +24,89 @@ namespace vtdi_gatelog
      
         private void GateReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("User clicked on Gate Reports");
+
+            if (isloggedin)
+            {
+                MessageBox.Show("User clicked on Gate Reports");
+            }
+            else
+            {
+
+                ShowLogin();
+            }
+           
         }
 
         private void LogInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LogInForm logIn = new LogInForm();
-            logIn.MdiParent = this;
-            logIn.Show();
+            if (!isloggedin)
+            {
+                ShowLogin();
+
+            }
+            else
+            {
+                MessageBox.Show("You are already logged in");
+            }
+           
 
         }
 
         private void UserManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("User clicked on User Management");
+            if (isloggedin)
+            {
+                MessageBox.Show("User clicked on User Management");
+            }
+            else
+            {
+
+                ShowLogin();
+            }
         }
 
         private void SchedulingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("User clicked on Scheduling");
+            if (isloggedin)
+            {
+                MessageBox.Show("User clicked on Scheduling");
+            }
+            else
+            {
+
+                ShowLogin();
+            }
         }
 
         private void GuestListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("User clicked on Guest List");
+           if (isloggedin)
+            {
+                MessageBox.Show("User clicked on Guest List");
+            }
+            else
+            {
+
+                ShowLogin();
+            }
         }
 
         private void GateInOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GateInOut Gateio = new GateInOut();
-            Gateio.MdiParent = this;
-            Gateio.Show();
+
+            if (isloggedin)
+            {
+                Gatecheck Gateio = new Gatecheck();
+                Gateio.MdiParent = this;
+                Gateio.Show();
+            }
+            else
+            {
+
+                ShowLogin();
+            }
+
+           
         }
 
         private void UserLogsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,6 +116,27 @@ namespace vtdi_gatelog
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        public void ShowLogin()
+        {
+            LogInForm logIn = new LogInForm();
+            logIn.MdiParent = this;
+            logIn.Show();
+        }
+
+        private void LogOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isloggedin)
+            {
+                isloggedin = false;
+
+            }
+            else
+            {
+                MessageBox.Show("You are not logged in");
+            }
 
         }
     }

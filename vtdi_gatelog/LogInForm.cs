@@ -26,30 +26,38 @@ namespace vtdi_gatelog
 
         private void Btlogin_Click(object sender, EventArgs e)
         {
-            
-            num2 = int.Parse(TBcaptcha.Text);
+            if (String.IsNullOrEmpty(TBcaptcha.Text))
+            {
+                MessageBox.Show("Please enter a captcha");
 
+            }else
+            {
+                num2 = int.Parse(TBcaptcha.Text);
 
-            if (num1 != num2){
+                if (num1 != num2)
+                {
 
-                Lbmessage.Text = ("You are a robot");
-            }else{
-                Lbmessage.Text = ("You are Not a robot");
-
+                    Lbmessage.Text = ("You are a robot");
+                }
+                else
+                {
+                    Lbmessage.Text = ("You are Not a robot");
+                    var parent = (Form1)this.MdiParent;
+                    parent.isloggedin = true;
+                    this.Close();
+                }
             }
-
-            this.Close();
+          
         }
 
         private void Btreset_Click(object sender, EventArgs e)
         {
-
             Random rnd1 = new Random();
             num1 = rnd1.Next(5786, 98874);
             Tbcaptchadis.Text = num1.ToString();
 
-            Tbpassword.Text = "";
-            Tbusername.Text= "";
+            Tbpassword.Clear();
+            Tbusername.Clear();
 
         }
     }
