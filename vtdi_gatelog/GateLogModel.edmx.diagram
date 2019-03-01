@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="vtdi_gatelog_dbModel.Itemtodeclear" Width="1.5" PointX="6.375" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="vtdi_gatelog_dbModel.purpose" Width="1.5" PointX="9.375" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="vtdi_gatelog_dbModel.User" Width="1.5" PointX="2.375" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.VehicleType" Width="1.5" PointX="6.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.VehicleType" Width="1.5" PointX="6.625" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_Itemtodeclear" ManuallyRouted="false" />
         <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_Purpose" ManuallyRouted="false" />
         <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_Users" ManuallyRouted="false" />

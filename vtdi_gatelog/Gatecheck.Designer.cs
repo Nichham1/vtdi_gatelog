@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Btcancel = new System.Windows.Forms.Button();
             this.BtSubmit = new System.Windows.Forms.Button();
             this.Dtpcheckout = new System.Windows.Forms.DateTimePicker();
@@ -45,7 +46,19 @@
             this.CBVehicleType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CBPurpose = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.purposeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vtdi_gatelog_dbDataSet = new vtdi_gatelog.vtdi_gatelog_dbDataSet();
+            this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CbItemstodeclare = new System.Windows.Forms.ComboBox();
+            this.itemtodeclearBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vtdi_gatelog_dbDataSet1 = new vtdi_gatelog.vtdi_gatelog_dbDataSet1();
+            this.purposeTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter();
+            this.itemtodeclearTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSet1TableAdapters.ItemtodeclearTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemtodeclearBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btcancel
@@ -104,7 +117,7 @@
             // TbLicense
             // 
             this.TbLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbLicense.Location = new System.Drawing.Point(6, 138);
+            this.TbLicense.Location = new System.Drawing.Point(3, 139);
             this.TbLicense.Name = "TbLicense";
             this.TbLicense.Size = new System.Drawing.Size(202, 20);
             this.TbLicense.TabIndex = 2;
@@ -226,39 +239,68 @@
             // CBPurpose
             // 
             this.CBPurpose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBPurpose.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.purposeBindingSource1, "Id", true));
+            this.CBPurpose.DataSource = this.purposeBindingSource1;
+            this.CBPurpose.DisplayMember = "Name";
             this.CBPurpose.FormattingEnabled = true;
-            this.CBPurpose.Items.AddRange(new object[] {
-            "Work",
-            "School",
-            "Meeting ",
-            "Dropoff",
-            "Other "});
             this.CBPurpose.Location = new System.Drawing.Point(240, 86);
             this.CBPurpose.Name = "CBPurpose";
             this.CBPurpose.Size = new System.Drawing.Size(215, 21);
             this.CBPurpose.TabIndex = 8;
+            this.CBPurpose.ValueMember = "Id";
             // 
-            // comboBox3
+            // purposeBindingSource1
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Computer ",
-            "Machine ",
-            "Gun",
-            "Love me "});
-            this.comboBox3.Location = new System.Drawing.Point(240, 138);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(215, 21);
-            this.comboBox3.TabIndex = 8;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.purposeBindingSource1.DataMember = "purpose";
+            this.purposeBindingSource1.DataSource = this.vtdi_gatelog_dbDataSet;
+            // 
+            // vtdi_gatelog_dbDataSet
+            // 
+            this.vtdi_gatelog_dbDataSet.DataSetName = "vtdi_gatelog_dbDataSet";
+            this.vtdi_gatelog_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // purposeBindingSource
+            // 
+            this.purposeBindingSource.DataSource = typeof(vtdi_gatelog.purpose);
+            // 
+            // CbItemstodeclare
+            // 
+            this.CbItemstodeclare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CbItemstodeclare.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.itemtodeclearBindingSource, "Id", true));
+            this.CbItemstodeclare.DataSource = this.itemtodeclearBindingSource;
+            this.CbItemstodeclare.DisplayMember = "Name";
+            this.CbItemstodeclare.FormattingEnabled = true;
+            this.CbItemstodeclare.Location = new System.Drawing.Point(240, 138);
+            this.CbItemstodeclare.Name = "CbItemstodeclare";
+            this.CbItemstodeclare.Size = new System.Drawing.Size(215, 21);
+            this.CbItemstodeclare.TabIndex = 8;
+            this.CbItemstodeclare.ValueMember = "Id";
+            this.CbItemstodeclare.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // itemtodeclearBindingSource
+            // 
+            this.itemtodeclearBindingSource.DataMember = "Itemtodeclear";
+            this.itemtodeclearBindingSource.DataSource = this.vtdi_gatelog_dbDataSet1;
+            // 
+            // vtdi_gatelog_dbDataSet1
+            // 
+            this.vtdi_gatelog_dbDataSet1.DataSetName = "vtdi_gatelog_dbDataSet1";
+            this.vtdi_gatelog_dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // purposeTableAdapter
+            // 
+            this.purposeTableAdapter.ClearBeforeFill = true;
+            // 
+            // itemtodeclearTableAdapter
+            // 
+            this.itemtodeclearTableAdapter.ClearBeforeFill = true;
             // 
             // Gatecheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 392);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.CbItemstodeclare);
             this.Controls.Add(this.CBPurpose);
             this.Controls.Add(this.CBVehicleType);
             this.Controls.Add(this.LbPlateNumber);
@@ -278,6 +320,12 @@
             this.Controls.Add(this.Btcancel);
             this.Name = "Gatecheck";
             this.Text = "Gatecheck";
+            this.Load += new System.EventHandler(this.Gatecheck_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemtodeclearBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +350,13 @@
         private System.Windows.Forms.ComboBox CBVehicleType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBPurpose;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox CbItemstodeclare;
+        private System.Windows.Forms.BindingSource purposeBindingSource;
+        private vtdi_gatelog_dbDataSet vtdi_gatelog_dbDataSet;
+        private System.Windows.Forms.BindingSource purposeBindingSource1;
+        private vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter purposeTableAdapter;
+        private vtdi_gatelog_dbDataSet1 vtdi_gatelog_dbDataSet1;
+        private System.Windows.Forms.BindingSource itemtodeclearBindingSource;
+        private vtdi_gatelog_dbDataSet1TableAdapters.ItemtodeclearTableAdapter itemtodeclearTableAdapter;
     }
 }
