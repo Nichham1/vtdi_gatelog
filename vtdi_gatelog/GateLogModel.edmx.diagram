@@ -5,17 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="40deb55c1d364c6a82ef706500100ec4" Name="Diagram1">
-        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.Gateinout" Width="1.5" PointX="4.5" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.Gender" Width="1.5" PointX="0.5" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.Itemtodeclear" Width="1.5" PointX="6.375" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.purpose" Width="1.5" PointX="9.375" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.User" Width="1.5" PointX="2.375" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.VehicleType" Width="1.5" PointX="6.625" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_Itemtodeclear" ManuallyRouted="false" />
-        <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_Purpose" ManuallyRouted="false" />
-        <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_VehicleType" ManuallyRouted="false" />
-        <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Users_Gender" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.Gateinout" Width="1.5" PointX="4.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.purpose" Width="1.5" PointX="6.375" PointY="2.5" />
+        <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_Purpose" />
+        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.Gender" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.Itemtodeclear" Width="1.5" PointX="8.625" PointY="2.875" />
+        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.User" Width="1.5" PointX="2.5" PointY="0.75" />
+        <EntityTypeShape EntityType="vtdi_gatelog_dbModel.VehicleType" Width="1.5" PointX="6.375" PointY="0.75" />
+        <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_Itemtodeclear" />
+        <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_Users" />
+        <AssociationConnector Association="vtdi_gatelog_dbModel.FK_Gateinout_VehicleType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,6 +1,6 @@
 ﻿namespace vtdi_gatelog
 {
-    partial class Gatecheck
+    partial class Gatecheckin
     {
         /// <summary>
         /// Required designer variable.
@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.Btcancel = new System.Windows.Forms.Button();
             this.BtSubmit = new System.Windows.Forms.Button();
-            this.Dtpcheckout = new System.Windows.Forms.DateTimePicker();
             this.Dtpcheckin = new System.Windows.Forms.DateTimePicker();
             this.TBFirstname = new System.Windows.Forms.TextBox();
             this.TBlastname = new System.Windows.Forms.TextBox();
             this.TbLicense = new System.Windows.Forms.TextBox();
             this.Rbcheckin = new System.Windows.Forms.RadioButton();
-            this.Rbcheckout = new System.Windows.Forms.RadioButton();
             this.LbFirstname = new System.Windows.Forms.Label();
             this.LbLastName = new System.Windows.Forms.Label();
             this.LbVehicleType = new System.Windows.Forms.Label();
             this.LbPlateNumber = new System.Windows.Forms.Label();
             this.LbPurpose = new System.Windows.Forms.Label();
             this.CBVehicleType = new System.Windows.Forms.ComboBox();
+            this.vehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vtdi_gatelog_dbDataSet2 = new vtdi_gatelog.vtdi_gatelog_dbDataSet2();
             this.label1 = new System.Windows.Forms.Label();
             this.CBPurpose = new System.Windows.Forms.ComboBox();
             this.purposeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -54,6 +54,9 @@
             this.vtdi_gatelog_dbDataSet1 = new vtdi_gatelog.vtdi_gatelog_dbDataSet1();
             this.purposeTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter();
             this.itemtodeclearTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSet1TableAdapters.ItemtodeclearTableAdapter();
+            this.vehicleTypeTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSet2TableAdapters.VehicleTypeTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).BeginInit();
@@ -82,18 +85,10 @@
             this.BtSubmit.UseVisualStyleBackColor = true;
             this.BtSubmit.Click += new System.EventHandler(this.BtSubmit_Click);
             // 
-            // Dtpcheckout
-            // 
-            this.Dtpcheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dtpcheckout.Location = new System.Drawing.Point(161, 238);
-            this.Dtpcheckout.Name = "Dtpcheckout";
-            this.Dtpcheckout.Size = new System.Drawing.Size(200, 20);
-            this.Dtpcheckout.TabIndex = 1;
-            // 
             // Dtpcheckin
             // 
             this.Dtpcheckin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dtpcheckin.Location = new System.Drawing.Point(161, 190);
+            this.Dtpcheckin.Location = new System.Drawing.Point(163, 220);
             this.Dtpcheckin.Name = "Dtpcheckin";
             this.Dtpcheckin.Size = new System.Drawing.Size(200, 20);
             this.Dtpcheckin.TabIndex = 1;
@@ -126,25 +121,13 @@
             // 
             this.Rbcheckin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Rbcheckin.AutoSize = true;
-            this.Rbcheckin.Location = new System.Drawing.Point(61, 193);
+            this.Rbcheckin.Location = new System.Drawing.Point(63, 223);
             this.Rbcheckin.Name = "Rbcheckin";
             this.Rbcheckin.Size = new System.Drawing.Size(80, 17);
             this.Rbcheckin.TabIndex = 5;
             this.Rbcheckin.TabStop = true;
             this.Rbcheckin.Text = "Checked In";
             this.Rbcheckin.UseVisualStyleBackColor = true;
-            // 
-            // Rbcheckout
-            // 
-            this.Rbcheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Rbcheckout.AutoSize = true;
-            this.Rbcheckout.Location = new System.Drawing.Point(61, 242);
-            this.Rbcheckout.Name = "Rbcheckout";
-            this.Rbcheckout.Size = new System.Drawing.Size(88, 17);
-            this.Rbcheckout.TabIndex = 5;
-            this.Rbcheckout.TabStop = true;
-            this.Rbcheckout.Text = "Checked Out";
-            this.Rbcheckout.UseVisualStyleBackColor = true;
             // 
             // LbFirstname
             // 
@@ -199,32 +182,25 @@
             // CBVehicleType
             // 
             this.CBVehicleType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBVehicleType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vehicleTypeBindingSource, "Id", true));
+            this.CBVehicleType.DataSource = this.vehicleTypeBindingSource;
+            this.CBVehicleType.DisplayMember = "Name";
             this.CBVehicleType.FormattingEnabled = true;
-            this.CBVehicleType.Items.AddRange(new object[] {
-            "Hunda",
-            "Toyota",
-            "Hyundai",
-            "Volkswagen",
-            "Volvo",
-            "Subaru",
-            "Suzuki",
-            "Tesla",
-            "Renault",
-            "Porsche",
-            "Peugeot ",
-            "Nissan ",
-            "Mitsubishi",
-            "Mercedes-Benz",
-            "Mazda",
-            "Jeep",
-            "Jaguar",
-            "Ford",
-            "BMW",
-            "Audi"});
             this.CBVehicleType.Location = new System.Drawing.Point(241, 33);
             this.CBVehicleType.Name = "CBVehicleType";
             this.CBVehicleType.Size = new System.Drawing.Size(214, 21);
             this.CBVehicleType.TabIndex = 7;
+            this.CBVehicleType.ValueMember = "Id";
+            // 
+            // vehicleTypeBindingSource
+            // 
+            this.vehicleTypeBindingSource.DataMember = "VehicleType";
+            this.vehicleTypeBindingSource.DataSource = this.vtdi_gatelog_dbDataSet2;
+            // 
+            // vtdi_gatelog_dbDataSet2
+            // 
+            this.vtdi_gatelog_dbDataSet2.DataSetName = "vtdi_gatelog_dbDataSet2";
+            this.vtdi_gatelog_dbDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -295,7 +271,11 @@
             // 
             this.itemtodeclearTableAdapter.ClearBeforeFill = true;
             // 
-            // Gatecheck
+            // vehicleTypeTableAdapter
+            // 
+            this.vehicleTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // Gatecheckin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -309,18 +289,18 @@
             this.Controls.Add(this.LbPurpose);
             this.Controls.Add(this.LbVehicleType);
             this.Controls.Add(this.LbFirstname);
-            this.Controls.Add(this.Rbcheckout);
             this.Controls.Add(this.Rbcheckin);
             this.Controls.Add(this.TbLicense);
             this.Controls.Add(this.TBlastname);
             this.Controls.Add(this.TBFirstname);
             this.Controls.Add(this.Dtpcheckin);
-            this.Controls.Add(this.Dtpcheckout);
             this.Controls.Add(this.BtSubmit);
             this.Controls.Add(this.Btcancel);
-            this.Name = "Gatecheck";
+            this.Name = "Gatecheckin";
             this.Text = "Gatecheck";
             this.Load += new System.EventHandler(this.Gatecheck_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).EndInit();
@@ -335,13 +315,11 @@
 
         private System.Windows.Forms.Button Btcancel;
         private System.Windows.Forms.Button BtSubmit;
-        private System.Windows.Forms.DateTimePicker Dtpcheckout;
         private System.Windows.Forms.DateTimePicker Dtpcheckin;
         private System.Windows.Forms.TextBox TBFirstname;
         private System.Windows.Forms.TextBox TBlastname;
         private System.Windows.Forms.TextBox TbLicense;
         private System.Windows.Forms.RadioButton Rbcheckin;
-        private System.Windows.Forms.RadioButton Rbcheckout;
         private System.Windows.Forms.Label LbLastName;
         private System.Windows.Forms.Label LbVehicleType;
         private System.Windows.Forms.Label LbPlateNumber;
@@ -358,5 +336,8 @@
         private vtdi_gatelog_dbDataSet1 vtdi_gatelog_dbDataSet1;
         private System.Windows.Forms.BindingSource itemtodeclearBindingSource;
         private vtdi_gatelog_dbDataSet1TableAdapters.ItemtodeclearTableAdapter itemtodeclearTableAdapter;
+        private vtdi_gatelog_dbDataSet2 vtdi_gatelog_dbDataSet2;
+        private System.Windows.Forms.BindingSource vehicleTypeBindingSource;
+        private vtdi_gatelog_dbDataSet2TableAdapters.VehicleTypeTableAdapter vehicleTypeTableAdapter;
     }
 }

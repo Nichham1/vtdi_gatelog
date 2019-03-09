@@ -33,13 +33,14 @@
             this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.schedulingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gateLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gateInOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gateReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gateOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,11 +88,19 @@
             this.schedulingToolStripMenuItem.Text = "Scheduling";
             this.schedulingToolStripMenuItem.Click += new System.EventHandler(this.SchedulingToolStripMenuItem_Click);
             // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.LogOutToolStripMenuItem_Click);
+            // 
             // gateLogsToolStripMenuItem
             // 
             this.gateLogsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.guestListToolStripMenuItem,
-            this.gateInOutToolStripMenuItem});
+            this.gateInOutToolStripMenuItem,
+            this.gateOutToolStripMenuItem});
             this.gateLogsToolStripMenuItem.Name = "gateLogsToolStripMenuItem";
             this.gateLogsToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.gateLogsToolStripMenuItem.Text = "Gate Logs";
@@ -99,15 +108,15 @@
             // guestListToolStripMenuItem
             // 
             this.guestListToolStripMenuItem.Name = "guestListToolStripMenuItem";
-            this.guestListToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.guestListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guestListToolStripMenuItem.Text = "Guest List";
             this.guestListToolStripMenuItem.Click += new System.EventHandler(this.GuestListToolStripMenuItem_Click);
             // 
             // gateInOutToolStripMenuItem
             // 
             this.gateInOutToolStripMenuItem.Name = "gateInOutToolStripMenuItem";
-            this.gateInOutToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.gateInOutToolStripMenuItem.Text = "Gate In/Out";
+            this.gateInOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gateInOutToolStripMenuItem.Text = "Gate in";
             this.gateInOutToolStripMenuItem.Click += new System.EventHandler(this.GateInOutToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
@@ -133,12 +142,12 @@
             this.userLogsToolStripMenuItem.Text = "User Logs";
             this.userLogsToolStripMenuItem.Click += new System.EventHandler(this.UserLogsToolStripMenuItem_Click);
             // 
-            // logOutToolStripMenuItem
+            // gateOutToolStripMenuItem
             // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logOutToolStripMenuItem.Text = "Log Out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.LogOutToolStripMenuItem_Click);
+            this.gateOutToolStripMenuItem.Name = "gateOutToolStripMenuItem";
+            this.gateOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gateOutToolStripMenuItem.Text = "Gate Out";
+            this.gateOutToolStripMenuItem.Click += new System.EventHandler(this.gateOutToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -154,8 +163,6 @@
             this.HelpButton = true;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(600, 600);
-            this.MinimumSize = new System.Drawing.Size(533, 555);
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -182,6 +189,7 @@
         private System.Windows.Forms.ToolStripMenuItem gateReportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userLogsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gateOutToolStripMenuItem;
     }
 }
 

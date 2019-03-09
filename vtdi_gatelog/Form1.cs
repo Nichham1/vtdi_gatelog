@@ -20,7 +20,7 @@ namespace vtdi_gatelog
         {
             InitializeComponent();
         }
-
+        0
      
         private void GateReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,9 +96,9 @@ namespace vtdi_gatelog
 
             if (isloggedin)
             {
-                Gatecheck Gateio = new Gatecheck();
-                Gateio.MdiParent = this;
-                Gateio.Show();
+                Gatecheckin Gatei = new Gatecheckin();
+                Gatei.MdiParent = this;
+                Gatei.Show();
             }
             else
             {
@@ -138,6 +138,21 @@ namespace vtdi_gatelog
                 MessageBox.Show("You are not logged in");
             }
 
+        }
+
+        private void gateOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isloggedin)
+            {
+                Gatecheckout Gateo = new Gatecheckout();
+                Gateo.MdiParent = this;
+                Gateo.Show();
+            }
+            else
+            {
+
+                ShowLogin();
+            }
         }
     }
 }

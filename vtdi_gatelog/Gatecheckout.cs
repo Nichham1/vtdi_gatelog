@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace vtdi_gatelog
 {
-    public partial class Gatecheck : Form
+    public partial class Gatecheckout : Form
     {
-        public Gatecheck()
+        public Gatecheckout()
         {
             InitializeComponent();
         }
@@ -27,9 +27,9 @@ namespace vtdi_gatelog
             var Carmodel = CBVehicleType.SelectedValue;
             var purposeOfvisit = CBPurpose.SelectedValue;
             var itemde = CbItemstodeclare.SelectedValue;
-            Boolean Checkin = Rbcheckin.Checked;
+            
             Boolean Checkout = Rbcheckout.Checked;
-            DateTime Checkindate = Dtpcheckin.Value;
+            
             DateTime CheckOudate = Dtpcheckout.Value;
 
             if (String.IsNullOrEmpty(Lastname) || String.IsNullOrEmpty(License))
@@ -37,10 +37,9 @@ namespace vtdi_gatelog
 
                 MessageBox.Show("Please do not leave the Lastname or License empty");
             }
+            else { MessageBox.Show("Wasnt that easy"); }
 
-            MessageBox.Show("Wasnt that easy");
-
-        }
+}
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {

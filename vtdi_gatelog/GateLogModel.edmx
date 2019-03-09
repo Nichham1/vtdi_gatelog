@@ -9,22 +9,22 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Firstname" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="VehicleTypeID" Type="int" Nullable="false" />
-          <Property Name="PlateNumber" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="PurposeID" Type="int" Nullable="false" />
-          <Property Name="ItemstodeclereID" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleTypeID" Type="int" />
+          <Property Name="PlateNumber" Type="varchar" MaxLength="50" />
+          <Property Name="PurposeID" Type="int" />
+          <Property Name="ItemstodeclereID" Type="int" />
           <Property Name="Datetimein" Type="datetime" />
           <Property Name="Datetimeout" Type="datetime" />
-          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Itemtodeclear">
@@ -32,7 +32,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="purpose">
           <Key>
@@ -46,14 +46,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Genderid" Type="int" Nullable="false" />
-          <Property Name="Datecreated" Type="datetime" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="VehicleType">
           <Key>
@@ -63,7 +60,7 @@
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Gateinout_Itemtodeclear">
-          <End Role="Itemtodeclear" Type="Self.Itemtodeclear" Multiplicity="1" />
+          <End Role="Itemtodeclear" Type="Self.Itemtodeclear" Multiplicity="0..1" />
           <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Itemtodeclear">
@@ -75,7 +72,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Gateinout_Purpose">
-          <End Role="purpose" Type="Self.purpose" Multiplicity="1" />
+          <End Role="purpose" Type="Self.purpose" Multiplicity="0..1" />
           <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="purpose">
@@ -87,7 +84,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Gateinout_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -99,7 +96,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Gateinout_VehicleType">
-          <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="1" />
+          <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="0..1" />
           <End Role="Gateinout" Type="Self.Gateinout" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="VehicleType">
@@ -107,18 +104,6 @@
             </Principal>
             <Dependent Role="Gateinout">
               <PropertyRef Name="VehicleTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Users_Gender">
-          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gender">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="Genderid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -145,10 +130,6 @@
             <End Role="VehicleType" EntitySet="VehicleType" />
             <End Role="Gateinout" EntitySet="Gateinout" />
           </AssociationSet>
-          <AssociationSet Name="FK_Users_Gender" Association="Self.FK_Users_Gender">
-            <End Role="Gender" EntitySet="Gender" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -159,15 +140,15 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="VehicleTypeID" Type="Int32" Nullable="false" />
-          <Property Name="PlateNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PurposeID" Type="Int32" Nullable="false" />
-          <Property Name="ItemstodeclereID" Type="Int32" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTypeID" Type="Int32" />
+          <Property Name="PlateNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PurposeID" Type="Int32" />
+          <Property Name="ItemstodeclereID" Type="Int32" />
           <Property Name="Datetimein" Type="DateTime" Precision="3" />
           <Property Name="Datetimeout" Type="DateTime" Precision="3" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
           <NavigationProperty Name="Itemtodeclear" Relationship="Self.FK_Gateinout_Itemtodeclear" FromRole="Gateinout" ToRole="Itemtodeclear" />
           <NavigationProperty Name="purpose" Relationship="Self.FK_Gateinout_Purpose" FromRole="Gateinout" ToRole="purpose" />
           <NavigationProperty Name="User" Relationship="Self.FK_Gateinout_Users" FromRole="Gateinout" ToRole="Users" />
@@ -186,7 +167,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Gateinouts" Relationship="Self.FK_Gateinout_Itemtodeclear" FromRole="Itemtodeclear" ToRole="Gateinout" />
         </EntityType>
         <EntityType Name="purpose">
@@ -202,12 +183,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Genderid" Type="Int32" Nullable="false" />
           <Property Name="Datecreated" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Gateinouts" Relationship="Self.FK_Gateinout_Users" FromRole="Users" ToRole="Gateinout" />
@@ -361,13 +342,10 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Genderid" ColumnName="Genderid" />
-                <ScalarProperty Name="Datecreated" ColumnName="Datecreated" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VehicleTypes">

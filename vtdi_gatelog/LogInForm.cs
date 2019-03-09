@@ -7,56 +7,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
-namespace vtdi_gatelog
-{
+namespace vtdi_gatelog { 
+    
     public partial class LogInForm : Form  {
 
-        int num1;
-        int num2;
 
         public LogInForm()
         {
             InitializeComponent();
 
-            Random rnd1 = new Random();
-            num1 = rnd1.Next(5786, 98874);
-            Tbcaptchadis.Text = num1.ToString();
+           
         }
 
         private void Btlogin_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(TBcaptcha.Text))
-            {
-                MessageBox.Show("Please enter a captcha");
+            var datactx = new vtdi_gatelog_dbEntities();
 
-            }else
-            {
-                num2 = int.Parse(TBcaptcha.Text);
+            var username = Tbusername.Text;
+            var password = Tbpassword.Text;
 
-                if (num1 != num2)
+            if (username== "")
+            {
+                //String theusername = String.Empty;
+
+                MessageBox.Show("User Name is required");
+            }
+            else if (password == "")
+            {
+                //String thepassword = String.Empty;
+                MessageBox.Show("Pass Code is required");
+            }
+            else
+            {
+                var userCount = datactx.Users.Count(q => q.UserName == username && q.Password == password);
+
+                if (userCount != 1)
                 {
-
-                    Lbmessage.Text = ("You are a robot");
+                    MessageBox.Show("Invalid Credentials");
                 }
                 else
                 {
-                    Lbmessage.Text = ("You are Not a robot");
                     var parent = (Form1)this.MdiParent;
                     parent.isloggedin = true;
                     this.Close();
+                    //btLogin.Show();
+                    MessageBox.Show($"Welcome {username}");
                 }
+
             }
-          
+           
         }
 
         private void Btreset_Click(object sender, EventArgs e)
         {
-            Random rnd1 = new Random();
-            num1 = rnd1.Next(5786, 98874);
-            Tbcaptchadis.Text = num1.ToString();
-
-            Tbpassword.Clear();
+           Tbpassword.Clear();
             Tbusername.Clear();
 
         }
