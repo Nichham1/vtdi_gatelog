@@ -44,7 +44,7 @@
             this.Tbpassword.BackColor = System.Drawing.SystemColors.MenuText;
             this.Tbpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tbpassword.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Tbpassword.Location = new System.Drawing.Point(178, 239);
+            this.Tbpassword.Location = new System.Drawing.Point(122, 297);
             this.Tbpassword.Name = "Tbpassword";
             this.Tbpassword.PasswordChar = '*';
             this.Tbpassword.Size = new System.Drawing.Size(291, 24);
@@ -57,7 +57,7 @@
             this.Tbusername.BackColor = System.Drawing.SystemColors.MenuText;
             this.Tbusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tbusername.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Tbusername.Location = new System.Drawing.Point(178, 171);
+            this.Tbusername.Location = new System.Drawing.Point(121, 193);
             this.Tbusername.Name = "Tbusername";
             this.Tbusername.Size = new System.Drawing.Size(291, 24);
             this.Tbusername.TabIndex = 1;
@@ -75,7 +75,7 @@
             this.Btreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btreset.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btreset.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Btreset.Location = new System.Drawing.Point(378, 395);
+            this.Btreset.Location = new System.Drawing.Point(330, 395);
             this.Btreset.Name = "Btreset";
             this.Btreset.Size = new System.Drawing.Size(92, 39);
             this.Btreset.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.Btlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btlogin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btlogin.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Btlogin.Location = new System.Drawing.Point(178, 395);
+            this.Btlogin.Location = new System.Drawing.Point(109, 395);
             this.Btlogin.Name = "Btlogin";
             this.Btlogin.Size = new System.Drawing.Size(92, 39);
             this.Btlogin.TabIndex = 2;
@@ -111,7 +111,7 @@
             this.Lbusername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Lbusername.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbusername.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Lbusername.Location = new System.Drawing.Point(65, 167);
+            this.Lbusername.Location = new System.Drawing.Point(221, 142);
             this.Lbusername.Name = "Lbusername";
             this.Lbusername.Size = new System.Drawing.Size(91, 23);
             this.Lbusername.TabIndex = 3;
@@ -125,7 +125,7 @@
             this.Lbpassword.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Lbpassword.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbpassword.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Lbpassword.Location = new System.Drawing.Point(64, 234);
+            this.Lbpassword.Location = new System.Drawing.Point(226, 254);
             this.Lbpassword.Name = "Lbpassword";
             this.Lbpassword.Size = new System.Drawing.Size(86, 23);
             this.Lbpassword.TabIndex = 3;
@@ -136,7 +136,7 @@
             this.Pbicon.BackColor = System.Drawing.SystemColors.Desktop;
             this.Pbicon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Pbicon.Image = ((System.Drawing.Image)(resources.GetObject("Pbicon.Image")));
-            this.Pbicon.Location = new System.Drawing.Point(286, 90);
+            this.Pbicon.Location = new System.Drawing.Point(236, 40);
             this.Pbicon.Name = "Pbicon";
             this.Pbicon.Size = new System.Drawing.Size(58, 58);
             this.Pbicon.TabIndex = 4;

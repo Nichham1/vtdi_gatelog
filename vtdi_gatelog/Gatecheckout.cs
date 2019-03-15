@@ -34,7 +34,6 @@ namespace vtdi_gatelog
 
             if (String.IsNullOrEmpty(Lastname) || String.IsNullOrEmpty(License))
             {
-
                 MessageBox.Show("Please do not leave the Lastname or License empty");
             }
             else { MessageBox.Show("Wasnt that easy"); }
@@ -51,7 +50,7 @@ namespace vtdi_gatelog
             // TODO: This line of code loads data into the 'vtdi_gatelog_dbDataSet1.Itemtodeclear' table. You can move, or remove it, as needed.
             this.itemtodeclearTableAdapter.Fill(this.vtdi_gatelog_dbDataSet1.Itemtodeclear);
             // TODO: This line of code loads data into the 'vtdi_gatelog_dbDataSet.purpose' table. You can move, or remove it, as needed.
-            this.purposeTableAdapter.Fill(this.vtdi_gatelog_dbDataSet.purpose);
+       //     this.purposeTableAdapter.Fill(this.vtdi_gatelog_dbDataSet.purpose);
 
         }
     }

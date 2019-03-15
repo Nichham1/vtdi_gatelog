@@ -45,15 +45,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CBPurpose = new System.Windows.Forms.ComboBox();
             this.purposeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.vtdi_gatelog_dbDataSet = new vtdi_gatelog.vtdi_gatelog_dbDataSet();
             this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemtodeclearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vtdi_gatelog_dbDataSet1 = new vtdi_gatelog.vtdi_gatelog_dbDataSet1();
-            this.purposeTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter();
             this.itemtodeclearTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSet1TableAdapters.ItemtodeclearTableAdapter();
             this.CbItemstodeclare = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemtodeclearBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet1)).BeginInit();
@@ -62,7 +59,7 @@
             // Btcancel
             // 
             this.Btcancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btcancel.Location = new System.Drawing.Point(240, 310);
+            this.Btcancel.Location = new System.Drawing.Point(262, 282);
             this.Btcancel.Name = "Btcancel";
             this.Btcancel.Size = new System.Drawing.Size(75, 23);
             this.Btcancel.TabIndex = 0;
@@ -72,7 +69,7 @@
             // BtSubmit
             // 
             this.BtSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtSubmit.Location = new System.Drawing.Point(104, 310);
+            this.BtSubmit.Location = new System.Drawing.Point(126, 282);
             this.BtSubmit.Name = "BtSubmit";
             this.BtSubmit.Size = new System.Drawing.Size(75, 23);
             this.BtSubmit.TabIndex = 0;
@@ -83,7 +80,7 @@
             // Dtpcheckout
             // 
             this.Dtpcheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dtpcheckout.Location = new System.Drawing.Point(161, 238);
+            this.Dtpcheckout.Location = new System.Drawing.Point(198, 213);
             this.Dtpcheckout.Name = "Dtpcheckout";
             this.Dtpcheckout.Size = new System.Drawing.Size(200, 20);
             this.Dtpcheckout.TabIndex = 1;
@@ -116,7 +113,7 @@
             // 
             this.Rbcheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Rbcheckout.AutoSize = true;
-            this.Rbcheckout.Location = new System.Drawing.Point(61, 242);
+            this.Rbcheckout.Location = new System.Drawing.Point(98, 217);
             this.Rbcheckout.Name = "Rbcheckout";
             this.Rbcheckout.Size = new System.Drawing.Size(88, 17);
             this.Rbcheckout.TabIndex = 5;
@@ -230,16 +227,6 @@
             // purposeBindingSource1
             // 
             this.purposeBindingSource1.DataMember = "purpose";
-            this.purposeBindingSource1.DataSource = this.vtdi_gatelog_dbDataSet;
-            // 
-            // vtdi_gatelog_dbDataSet
-            // 
-            this.vtdi_gatelog_dbDataSet.DataSetName = "vtdi_gatelog_dbDataSet";
-            this.vtdi_gatelog_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // purposeBindingSource
-            // 
-            this.purposeBindingSource.DataSource = typeof(vtdi_gatelog.purpose);
             // 
             // itemtodeclearBindingSource
             // 
@@ -250,10 +237,6 @@
             // 
             this.vtdi_gatelog_dbDataSet1.DataSetName = "vtdi_gatelog_dbDataSet1";
             this.vtdi_gatelog_dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // purposeTableAdapter
-            // 
-            this.purposeTableAdapter.ClearBeforeFill = true;
             // 
             // itemtodeclearTableAdapter
             // 
@@ -298,7 +281,6 @@
             this.Text = "Gatecheck";
             this.Load += new System.EventHandler(this.Gatecheck_Load);
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemtodeclearBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet1)).EndInit();
@@ -325,9 +307,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBPurpose;
         private System.Windows.Forms.BindingSource purposeBindingSource;
-        private vtdi_gatelog_dbDataSet vtdi_gatelog_dbDataSet;
+      //  private vtdi_gatelog_dbDataSet vtdi_gatelog_dbDataSet;
         private System.Windows.Forms.BindingSource purposeBindingSource1;
-        private vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter purposeTableAdapter;
+      //  private vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter purposeTableAdapter;
         private vtdi_gatelog_dbDataSet1 vtdi_gatelog_dbDataSet1;
         private System.Windows.Forms.BindingSource itemtodeclearBindingSource;
         private vtdi_gatelog_dbDataSet1TableAdapters.ItemtodeclearTableAdapter itemtodeclearTableAdapter;

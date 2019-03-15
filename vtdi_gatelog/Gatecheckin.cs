@@ -22,6 +22,7 @@ namespace vtdi_gatelog
 
         private void BtSubmit_Click(object sender, EventArgs e)
         {
+            Gatecheckin record = new Gatecheckin();
 
             var Firstname = TBFirstname.Text;
             var Lastname = TBlastname.Text;
@@ -31,6 +32,9 @@ namespace vtdi_gatelog
             var itemde = CbItemstodeclare.SelectedValue;
             Boolean Checkin = Rbcheckin.Checked;
             DateTime Checkindate = DateTime.Now;
+
+
+           
           
 
             if (String.IsNullOrEmpty(Lastname) || String.IsNullOrEmpty(License))
@@ -51,12 +55,14 @@ namespace vtdi_gatelog
 
         private void Gatecheck_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vtdi_gatelog_dbDataSet3.purpose' table. You can move, or remove it, as needed.
+            this.purposeTableAdapter1.Fill(this.vtdi_gatelog_dbDataSet3.purpose);
             // TODO: This line of code loads data into the 'vtdi_gatelog_dbDataSet2.VehicleType' table. You can move, or remove it, as needed.
             this.vehicleTypeTableAdapter.Fill(this.vtdi_gatelog_dbDataSet2.VehicleType);
             // TODO: This line of code loads data into the 'vtdi_gatelog_dbDataSet1.Itemtodeclear' table. You can move, or remove it, as needed.
             this.itemtodeclearTableAdapter.Fill(this.vtdi_gatelog_dbDataSet1.Itemtodeclear);
             // TODO: This line of code loads data into the 'vtdi_gatelog_dbDataSet.purpose' table. You can move, or remove it, as needed.
-            this.purposeTableAdapter.Fill(this.vtdi_gatelog_dbDataSet.purpose);
+       //     this.purposeTableAdapter.Fill(this.vtdi_gatelog_dbDataSet.purpose);
 
         }
     }

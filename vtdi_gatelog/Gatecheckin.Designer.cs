@@ -46,22 +46,23 @@
             this.vtdi_gatelog_dbDataSet2 = new vtdi_gatelog.vtdi_gatelog_dbDataSet2();
             this.label1 = new System.Windows.Forms.Label();
             this.CBPurpose = new System.Windows.Forms.ComboBox();
-            this.purposeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.vtdi_gatelog_dbDataSet = new vtdi_gatelog.vtdi_gatelog_dbDataSet();
-            this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.vtdi_gatelog_dbDataSet = new vtdi_gatelog.vtdi_gatelog_dbDataSet();
             this.CbItemstodeclare = new System.Windows.Forms.ComboBox();
             this.itemtodeclearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vtdi_gatelog_dbDataSet1 = new vtdi_gatelog.vtdi_gatelog_dbDataSet1();
-            this.purposeTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter();
+           // this.purposeTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter();
             this.itemtodeclearTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSet1TableAdapters.ItemtodeclearTableAdapter();
             this.vehicleTypeTableAdapter = new vtdi_gatelog.vtdi_gatelog_dbDataSet2TableAdapters.VehicleTypeTableAdapter();
+            this.vtdi_gatelog_dbDataSet3 = new vtdi_gatelog.vtdi_gatelog_dbDataSet3();
+            this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.purposeTableAdapter1 = new vtdi_gatelog.vtdi_gatelog_dbDataSet3TableAdapters.purposeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).BeginInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemtodeclearBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Btcancel
@@ -215,8 +216,8 @@
             // CBPurpose
             // 
             this.CBPurpose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CBPurpose.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.purposeBindingSource1, "Id", true));
-            this.CBPurpose.DataSource = this.purposeBindingSource1;
+            this.CBPurpose.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.purposeBindingSource, "Id", true));
+            this.CBPurpose.DataSource = this.purposeBindingSource;
             this.CBPurpose.DisplayMember = "Name";
             this.CBPurpose.FormattingEnabled = true;
             this.CBPurpose.Location = new System.Drawing.Point(240, 86);
@@ -225,19 +226,10 @@
             this.CBPurpose.TabIndex = 8;
             this.CBPurpose.ValueMember = "Id";
             // 
-            // purposeBindingSource1
-            // 
-            this.purposeBindingSource1.DataMember = "purpose";
-            this.purposeBindingSource1.DataSource = this.vtdi_gatelog_dbDataSet;
-            // 
             // vtdi_gatelog_dbDataSet
             // 
-            this.vtdi_gatelog_dbDataSet.DataSetName = "vtdi_gatelog_dbDataSet";
-            this.vtdi_gatelog_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // purposeBindingSource
-            // 
-            this.purposeBindingSource.DataSource = typeof(vtdi_gatelog.purpose);
+       //     this.vtdi_gatelog_dbDataSet.DataSetName = "vtdi_gatelog_dbDataSet";
+          //  this.vtdi_gatelog_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CbItemstodeclare
             // 
@@ -265,7 +257,7 @@
             // 
             // purposeTableAdapter
             // 
-            this.purposeTableAdapter.ClearBeforeFill = true;
+          //  this.purposeTableAdapter.ClearBeforeFill = true;
             // 
             // itemtodeclearTableAdapter
             // 
@@ -274,6 +266,20 @@
             // vehicleTypeTableAdapter
             // 
             this.vehicleTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // vtdi_gatelog_dbDataSet3
+            // 
+            this.vtdi_gatelog_dbDataSet3.DataSetName = "vtdi_gatelog_dbDataSet3";
+            this.vtdi_gatelog_dbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // purposeBindingSource
+            // 
+            this.purposeBindingSource.DataMember = "purpose";
+            this.purposeBindingSource.DataSource = this.vtdi_gatelog_dbDataSet3;
+            // 
+            // purposeTableAdapter1
+            // 
+            this.purposeTableAdapter1.ClearBeforeFill = true;
             // 
             // Gatecheckin
             // 
@@ -301,11 +307,11 @@
             this.Load += new System.EventHandler(this.Gatecheck_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vehicleTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).EndInit();
+       //     ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemtodeclearBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vtdi_gatelog_dbDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,15 +335,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBPurpose;
         private System.Windows.Forms.ComboBox CbItemstodeclare;
-        private System.Windows.Forms.BindingSource purposeBindingSource;
-        private vtdi_gatelog_dbDataSet vtdi_gatelog_dbDataSet;
-        private System.Windows.Forms.BindingSource purposeBindingSource1;
-        private vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter purposeTableAdapter;
+      //  private vtdi_gatelog_dbDataSet vtdi_gatelog_dbDataSet;
+       // private vtdi_gatelog_dbDataSetTableAdapters.purposeTableAdapter purposeTableAdapter;
         private vtdi_gatelog_dbDataSet1 vtdi_gatelog_dbDataSet1;
         private System.Windows.Forms.BindingSource itemtodeclearBindingSource;
         private vtdi_gatelog_dbDataSet1TableAdapters.ItemtodeclearTableAdapter itemtodeclearTableAdapter;
         private vtdi_gatelog_dbDataSet2 vtdi_gatelog_dbDataSet2;
         private System.Windows.Forms.BindingSource vehicleTypeBindingSource;
         private vtdi_gatelog_dbDataSet2TableAdapters.VehicleTypeTableAdapter vehicleTypeTableAdapter;
+        private vtdi_gatelog_dbDataSet3 vtdi_gatelog_dbDataSet3;
+        private System.Windows.Forms.BindingSource purposeBindingSource;
+        private vtdi_gatelog_dbDataSet3TableAdapters.purposeTableAdapter purposeTableAdapter1;
     }
 }

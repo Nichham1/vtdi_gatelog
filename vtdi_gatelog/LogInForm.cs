@@ -24,7 +24,7 @@ namespace vtdi_gatelog {
 
         private void Btlogin_Click(object sender, EventArgs e)
         {
-            var datactx = new vtdi_gatelog_dbEntities();
+           // var datactx = new vtdi_gatelog_dbEntities;
 
             var username = Tbusername.Text;
             var password = Tbpassword.Text;
@@ -42,20 +42,20 @@ namespace vtdi_gatelog {
             }
             else
             {
-                var userCount = datactx.Users.Count(q => q.UserName == username && q.Password == password);
+                //var userCount = datactx.Users.Count(q => q.UserName == username && q.Password == password);
 
-                if (userCount != 1)
-                {
-                    MessageBox.Show("Invalid Credentials");
-                }
-                else
-                {
-                    var parent = (Form1)this.MdiParent;
-                    parent.isloggedin = true;
-                    this.Close();
-                    //btLogin.Show();
-                    MessageBox.Show($"Welcome {username}");
-                }
+               // if (userCount != 1)
+               // {
+              //      MessageBox.Show("Invalid Credentials");
+              //  }
+             //   else
+             //   {
+            //        var parent = (Form1)this.MdiParent;
+            //        parent.isloggedin = true;
+            //        this.Close();
+            //        //btLogin.Show();
+            //        MessageBox.Show($"Welcome {username}");
+            //    }
 
             }
            

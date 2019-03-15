@@ -20,8 +20,7 @@ namespace vtdi_gatelog
         {
             InitializeComponent();
         }
-        0
-     
+      
         private void GateReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -31,7 +30,6 @@ namespace vtdi_gatelog
             }
             else
             {
-
                 ShowLogin();
             }
            
